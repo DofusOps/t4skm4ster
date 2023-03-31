@@ -1,9 +1,0 @@
-INFO:root:Starting process process1
-INFO:root:Starting process process2
-INFO:root:Starting process process2
-DEBUG:root:Process process1 is still running.
-DEBUG:root:Process process2 is still running.
-ERROR:root:Process process2 exited with code 1. Not restarting.
-DEBUG:root:Process process1 is still running.
-DEBUG:root:Process process2 is still running.
-ERROR:root:Process process2 exited with code 1. Not restarting.

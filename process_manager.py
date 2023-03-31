@@ -1,10 +1,11 @@
 import subprocess
 import time
+from config_parser import ConfigParser
 
 class ProcessManager:
     def __init__(self, config_data):
         self.config_data = config_data
-        print(self.config_data)
+        
         self.processes = {}
 
     def start_process(self, program_name):

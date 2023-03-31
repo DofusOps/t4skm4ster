@@ -1,5 +1,6 @@
 import os
 import sys
+from color_print import ColorPrint
 
 class ControlShell:
     def __init__(self, process_manager, config_parser, logger):
@@ -11,11 +12,11 @@ class ControlShell:
         # Implement logic to display the status of all programs
         self.logger.log_event("Printing status")
         for program_name in self.config_parser.config_data:
-            print(program_name + " is loaded.")
+            ColorPrint.print_pass(program_name + " is loaded.")
             if program_name in self.process_manager.processes:
-                print(program_name + " is running.")
+                ColorPrint.print_info(program_name + " is running.")
             else:
-                print(program_name + " is not running.")
+                ColorPrint.print_info(program_name + " is not running.")
         pass
 
     def start_program(self, program_name):
@@ -43,7 +44,7 @@ class ControlShell:
 
     def run(self):
         while True:
-            cmd = input('taskmaster> ')
+            cmd = input('\033[1;32;40m taskmaster> \033[0m')
 
             if cmd == 'status':
                 self.print_status()
@@ -65,4 +66,4 @@ class ControlShell:
             elif cmd in ['exit', 'quit']:
                 self.exit_program()
             else:
-                print("Unknown command:", cmd)
+                ColorPrint.print_fail("Unknown command:" + cmd + ".\n", "Type 'help' for a list of available commands.\n")

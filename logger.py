@@ -1,4 +1,5 @@
 import logging
+from color_print import ColorPrint
 
 class Logger:
     def __init__(self, log_file):
@@ -6,7 +7,7 @@ class Logger:
         self.logger = self.setup_logger()
 
     def setup_logger(self):
-        print("Setting up logger")
+        ColorPrint.print_info("Setting up logger")
         logger = logging.getLogger(__name__)
         logger.setLevel(logging.INFO)
         handler = logging.FileHandler(self.log_file)

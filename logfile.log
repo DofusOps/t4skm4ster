@@ -1,0 +1,41 @@
+2023-03-31 14:56:53,970 - INFO - Printing status
+2023-03-31 14:57:38,025 - INFO - Reloading config
+2023-03-31 14:57:41,289 - INFO - Printing status
+2023-03-31 14:57:52,889 - INFO - Reloading config
+2023-03-31 14:58:01,209 - INFO - Starting program: proc1
+2023-03-31 14:58:05,369 - INFO - Printing status
+2023-03-31 14:58:35,121 - INFO - Stopping program: proc1
+2023-03-31 14:58:49,257 - INFO - Printing status
+2023-03-31 15:49:26,219 - INFO - Printing status
+2023-03-31 15:50:16,088 - INFO - Printing status
+2023-03-31 15:50:20,648 - INFO - Reloading config
+2023-03-31 15:50:30,759 - INFO - Printing status
+2023-03-31 15:50:45,270 - INFO - Reloading config
+2023-03-31 15:50:48,325 - INFO - Printing status
+2023-03-31 15:51:07,717 - INFO - Reloading config
+2023-03-31 15:51:10,349 - INFO - Printing status
+2023-03-31 15:54:15,082 - INFO - Stopping program: proc1
+2023-03-31 15:55:55,621 - INFO - Starting program: proc1
+2023-03-31 15:56:42,795 - INFO - Stopping program: proc1
+2023-03-31 15:56:58,362 - INFO - Printing status
+2023-03-31 17:03:50,247 - INFO - Starting program: proc1
+2023-03-31 17:07:11,032 - INFO - Starting program: ls
+2023-03-31 17:07:19,248 - INFO - Starting program: ls_proc
+2023-03-31 17:08:01,918 - INFO - Stopping program: ls_proc
+2023-03-31 17:08:16,717 - INFO - Printing status
+2023-03-31 17:08:42,916 - INFO - Starting program: ls_no_bin
+2023-03-31 17:08:48,988 - INFO - Stopping program: ls_no_bin
+2023-04-06 10:10:43,983 - INFO - Starting program: proc1
+2023-04-06 08:16:17,227 - INFO - Printing status
+2023-04-06 08:16:32,363 - INFO - Starting program: proc1
+2023-04-06 08:16:51,244 - INFO - Starting program: proc1
+2023-04-06 08:36:02,906 - INFO - Starting program: proc1
+2023-04-06 08:36:32,650 - INFO - Starting program: proc2
+2023-04-06 08:36:49,074 - INFO - Starting program: ls_proc
+2023-04-06 08:36:57,747 - INFO - Stopping program: ls_proc
+2023-04-06 08:38:39,516 - INFO - Reloading config
+2023-04-06 08:38:54,108 - INFO - Reloading config
+2023-04-06 08:39:00,940 - INFO - Starting program: proc1
+2023-04-06 08:39:34,244 - INFO - Starting program: proc2
+2023-04-06 08:40:08,213 - INFO - Starting program: proc2
+2023-04-06 08:41:03,630 - INFO - Starting program: proc2

@@ -9,3 +9,18 @@
 4. Implement logging and notifications: Use the logging module to log messages to a file or a console. You can also use third-party packages like sentry-sdk or twilio to send notifications via email, SMS, or other channels when a process fails or crashes.
 
 5. Implement the daemonization process: Use the daemonize package or a similar package to daemonize the job control process, so that it runs as a background process and can be managed using standard Unix tools like systemctl or service.
+
+Todo:
+
+* Number of processes
+* Autostart programs
+* Autorestart
+* Exit status
+* How long to wait before successfully started
+* Retry attempt
+* Sig to stop
+* How long to wait before killing
+* Opt for redirect for stdout / stderr
+* Set environment var
+* Working dir for programs
+* Umask for programs

@@ -14,9 +14,9 @@ class ControlShell:
         for program_name in self.config_parser.config_data:
             ColorPrint.print_pass(program_name + " is loaded.")
             if program_name in self.process_manager.processes:
-                ColorPrint.print_info(program_name + " is running.")
+                ColorPrint.print_pass(program_name + " is running.")
             else:
-                ColorPrint.print_info(program_name + " is not running.")
+                ColorPrint.print_fail(program_name + " is not running.")
         pass
 
     def start_program(self, program_name):
@@ -37,7 +37,7 @@ class ControlShell:
     def reload_config(self):
         # Implement logic to reload the config file
         self.logger.log_event("Reloading config")
-        # self.config_parser.reload_config()
+        self.config_parser.reload_config()
 
     def exit_program(self):
         sys.exit()

@@ -1,13 +1,15 @@
 import subprocess
 import time
+import os
 from config_parser import ConfigParser
 from color_print import ColorPrint
 
 class ProcessManager:
     def __init__(self, config_data):
         self.config_data = config_data
-        
         self.processes = {}
+
+ 
 
     def start_process(self, program_name):
         ColorPrint.print_info("Starting process: " + program_name)
@@ -17,15 +19,22 @@ class ProcessManager:
             return
         print(program_config['cmd'])
         numprocs = program_config.get('numprocs', 1)
+        my_env = program_config.get('env', os.environ)
 
         for i in range(numprocs):
+            def pre_exec():
+                os.setsid()
+                os.umask(411)
+               
             process = subprocess.Popen(
                 program_config['cmd'],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
+                env=my_env,
+                stdout=program_config.get('stdout', subprocess.PIPE),
+                stderr=program_config.get('stdout', subprocess.PIPE),
                 stdin=subprocess.PIPE,
+                shell=True,
                 universal_newlines=True,
-                start_new_session=True,
+                preexec_fn=pre_exec,
             )
             self.processes[program_name] = process
             ColorPrint.print_pass(f"Starting process: {program_name} (PID: {process.pid})")
@@ -36,7 +45,6 @@ class ProcessManager:
         if not program_config:
             ColorPrint.print_fail(f"Program {program_name} not found in the configuration.")
             return
-        print(self.processes)
         process = self.processes.get(program_name)
         if not process:
             ColorPrint.print_fail(f"Process {program_name} is not running.")
@@ -44,12 +52,14 @@ class ProcessManager:
         
         stopsignal = program_config.get('stopsignal', 'TERM')
         signal_value = getattr(subprocess, f'signal.SIG{stopsignal}', subprocess.signal.SIGTERM)
+        
+        os.killpg(os.getpgid(process.pid), signal_value)
 
-        process.send_signal(signal_value)
+        ColorPrint.print_info(f"Send {signal_value} to : {process.pid} ({program_name})")
 
         stoptime = program_config.get('stoptime', 10)
         time.sleep(stoptime)
-
+        
         if process.poll() is None:
             process.kill()
 

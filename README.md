@@ -12,15 +12,16 @@
 
 Todo:
 
-* Number of processes
-* Autostart programs
-* Autorestart
-* Exit status
-* How long to wait before successfully started
-* Retry attempt
-* Sig to stop
-* How long to wait before killing
-* Opt for redirect for stdout / stderr
-* Set environment var
-* Working dir for programs
-* Umask for programs
+[x] Number of processes
+[] Stop processes when multiple
+[] Autostart programs
+[] Autorestart
+[] Exit status
+[] How long to wait before successfully started
+[] Retry attempt
+[x] Sig to stop
+[x] How long to wait before killing
+[] Opt for redirect for stdout / stderr
+[x] Set environment var
+[] Working dir for programs
+[~] Umask for programs

@@ -1,7 +1,17 @@
 proc1: 
-  cmd: /sbin/nginx -c /etc/nginx/nginx.conf
+  cmd: nginx -c /etc/nginx/nginx.conf
+  numprocs: 1
+  stopsignal: TERM
+  stoptime: 5
+  # stdout: /tmp/nginx.stdout
+  # stderr: /tmp/nginx.stderr
 proc2:
-  cmd: /usr/bin/python3.9 process2.py
+  cmd: /bin/sh -c python process2.py
+  stoptime: 2
+  stopsignal: TERM
+  numprocs: 1
+  # stderr: proc.stderr
+  # stdout: proc.stdout
 ls_proc:
   cmd: /bin/ls
 ls_no_bin:

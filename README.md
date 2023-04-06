@@ -25,3 +25,5 @@ Todo:
 [x] Set environment var
 [] Working dir for programs
 [~] Umask for programs
+
+to test : docker run -p 8080:80 -it -v ~/Documents/taskmaster/:/home python:latest bash

@@ -12,18 +12,18 @@
 
 Todo:
 
-[x] Number of processes\
-[] Stop processes when multiple\
-[] Autostart programs\
-[] Autorestart\
-[] Exit status\
-[] How long to wait before successfully started\
-[] Retry attempt\
-[x] Sig to stop\
-[x] How long to wait before killing\
-[] Opt for redirect for stdout / stderr\
-[x] Set environment var\
-[] Working dir for programs\
-[~] Umask for programs\
+- [x] Number of processes\
+- [ ] Stop processes when multiple\
+- [ ] Autostart programs\
+- [ ] Autorestart\
+- [ ] Exit status\
+- [ ] How long to wait before successfully started\
+- [ ] Retry attempt\
+- [x] Sig to stop\
+- [x] How long to wait before killing\
+- [ ] Opt for redirect for stdout / stderr\
+- [x] Set environment var\
+- [ ] Working dir for programs\
+- [ ] Umask for programs\
 
 to test : docker run -p 8080:80 -it -v ~/Documents/taskmaster/:/home python:latest bash

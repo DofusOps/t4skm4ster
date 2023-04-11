@@ -1,6 +1,7 @@
 #!/bin/bash
 
-apt update
-apt install nginx -y
-pip install --upgrade pip
-pip install -r requirements.txt
+# Build image
+docker build -t dockmaster .
+
+# Run image
+docker run -it -v ./taskmaster:/taskmaster dockmaster

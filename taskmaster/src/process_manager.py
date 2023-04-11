@@ -1,8 +1,8 @@
 import subprocess
 import time
 import os
-from config_parser import ConfigParser
-from color_print import ColorPrint
+from src.config_parser import ConfigParser
+from src.color_print import ColorPrint
 
 class ProcessManager:
     def __init__(self, config_data):

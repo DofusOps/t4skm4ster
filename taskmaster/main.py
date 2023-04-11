@@ -1,12 +1,12 @@
-from config_parser import ConfigParser
-from process_manager import ProcessManager
-from logger import Logger
-from control_shell import ControlShell
-from color_print import ColorPrint
+from src.config_parser import ConfigParser
+from src.process_manager import ProcessManager
+from src.logger import Logger
+from src.control_shell import ControlShell
+from src.color_print import ColorPrint
 
 def main():
-    config_file = "config.yaml"
-    log_file = "logfile.log"
+    config_file = "configs/config.yaml"
+    log_file = "logs/logfile.log"
 
     config_parser = ConfigParser(config_file)
     process_manager = ProcessManager(config_parser.config_data)

@@ -6,7 +6,7 @@ proc1:
   # stdout: /tmp/nginx.stdout
   # stderr: /tmp/nginx.stderr
 proc2:
-  cmd: /bin/sh -c python process2.py
+  cmd: /bin/sh -c python prograwefms/process2.py
   stoptime: 2
   stopsignal: TERM
   numprocs: 1

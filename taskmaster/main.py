@@ -2,7 +2,7 @@ from src.config_parser import ConfigParser
 from src.process_manager import ProcessManager
 from src.logger import Logger
 from src.control_shell import ControlShell
-from src.color_print import ColorPrint
+
 
 def main():
     config_file = "configs/config.yaml"
@@ -14,6 +14,7 @@ def main():
     control_shell = ControlShell(process_manager, config_parser, logger)
 
     control_shell.run()
+
 
 if __name__ == "__main__":
     main()

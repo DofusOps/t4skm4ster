@@ -1,15 +1,13 @@
 import subprocess
 import time
 import os
-from src.config_parser import ConfigParser
 from src.color_print import ColorPrint
+
 
 class ProcessManager:
     def __init__(self, config_data):
         self.config_data = config_data
         self.processes = {}
-
- 
 
     def start_process(self, program_name):
         ColorPrint.print_info("Starting process: " + program_name)
@@ -25,7 +23,7 @@ class ProcessManager:
             def pre_exec():
                 os.setsid()
                 os.umask(411)
-               
+
             process = subprocess.Popen(
                 program_config['cmd'],
                 env=my_env,
@@ -49,17 +47,17 @@ class ProcessManager:
         if not process:
             ColorPrint.print_fail(f"Process {program_name} is not running.")
             return
-        
+
         stopsignal = program_config.get('stopsignal', 'TERM')
         signal_value = getattr(subprocess, f'signal.SIG{stopsignal}', subprocess.signal.SIGTERM)
-        
+
         os.killpg(os.getpgid(process.pid), signal_value)
 
         ColorPrint.print_info(f"Send {signal_value} to : {process.pid} ({program_name})")
 
         stoptime = program_config.get('stoptime', 10)
         time.sleep(stoptime)
-        
+
         if process.poll() is None:
             process.kill()
 
@@ -81,7 +79,7 @@ class ProcessManager:
                 if process.poll() is not None:
                     ColorPrint.print_fail(f"Process {program_name} (PID: {process.pid}) exited unexpectedly.")
                     self.restart_process(program_name)
-            
+
             time.sleep(5)  # Adjust the monitoring interval as needed.
 
     # Add more methods as needed to manage processes.

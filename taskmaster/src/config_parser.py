@@ -1,6 +1,7 @@
 import yaml
 from src.color_print import ColorPrint
 
+
 class ConfigParser:
     def __init__(self, config_file):
         self.config_file = config_file

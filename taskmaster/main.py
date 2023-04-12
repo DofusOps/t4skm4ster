@@ -17,6 +17,10 @@ def main():
 
     print("NEW CODE FUCK YOU")
     print("THIS IS NEW LOL")
+    print("NEW CODE FUCK YOU")
+    print("THIS IS NEW LOL")
+    print("NEW CODE FUCK YOU")
+    print("THIS IS NEW LOL")
 
 
 if __name__ == "__main__":

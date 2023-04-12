@@ -2,9 +2,9 @@ name: Python CI
 
 on:
   push:
-    branches: [main, develop, ci]
+    branches: [main, develop, ci, sonarcloud_debug]
   pull_request:
-    branches: [main, develop, ci]
+    branches: [main, develop, ci, sonarcloud_debug]
 
 defaults:
   run:

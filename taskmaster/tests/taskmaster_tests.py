@@ -1,5 +1,6 @@
 import pexpect
 
+
 def test_spawn():
     taskmaster = pexpect.spawn("python main.py")
     taskmaster.expect("Loading config file:")

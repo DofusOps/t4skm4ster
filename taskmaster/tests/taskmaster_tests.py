@@ -1,3 +1,4 @@
+from time import sleep
 import pexpect
 
 def test_spawn():
@@ -20,6 +21,9 @@ def test_start():
 
 # def test_stop():
 #     taskmaster = pexpect.spawn("python main.py")
+#     taskmaster.sendline("start proc2")
+#     taskmaster.expect("Started process")
+#     sleep(120)
 #     taskmaster.sendline("stop proc2")
 #     taskmaster.expect("Stopping process")
 #     taskmaster.expect("Stopped process")

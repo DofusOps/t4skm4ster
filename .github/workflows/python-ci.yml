@@ -2,9 +2,9 @@ name: Python CI
 
 on:
   push:
-    branches: [main, develop, ci]
+    branches: [main, develop, ci, try_to_fix_sonarcloud]
   pull_request:
-    branches: [main, develop, ci]
+    branches: [main, develop, ci, try_to_fix_sonarcloud]
 
 defaults:
   run:
@@ -22,6 +22,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0  # Fetch all history for all branches and tags
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -31,7 +33,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest pexpect
+        pip install flake8 pytest pexpect pytest-cov
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Lint with flake8
@@ -42,6 +44,10 @@ jobs:
     - name: Test with pytest
       run: |
         pytest tests/*
+
+    - name: Upload coverage to Codecov
+      run: |
+        pytest --cov=taskmaster --cov-report=xml:coverage.xml tests/*
 
     - name: Scan with SonarCloud
       uses: SonarSource/sonarcloud-github-action@master

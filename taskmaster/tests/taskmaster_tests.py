@@ -1,4 +1,3 @@
-from time import sleep
 import pexpect
 
 def test_spawn():

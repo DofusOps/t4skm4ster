@@ -15,6 +15,9 @@ def main():
 
     control_shell.run()
 
+    print("NEW CODE FUCK YOU")
+    print("THIS IS NEW LOL")
+
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,6 @@
 import pexpect
 
+
 def test_reload():
     taskmaster = pexpect.spawn("python main.py")
     taskmaster.sendline("reload")

@@ -1,6 +1,7 @@
 import logging
 from src.color_print import ColorPrint
 
+
 class Logger:
     def __init__(self, log_file):
         self.log_file = log_file

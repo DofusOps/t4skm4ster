@@ -1,15 +1,14 @@
 import subprocess
 import time
 import os
-from src.config_parser import ConfigParser
 from src.color_print import ColorPrint
+
 
 class ProcessManager:
     def __init__(self, config_data):
         self.config_data = config_data
         self.processes = {}
 
- 
 
     def start_process(self, program_name):
         ColorPrint.print_info("Starting process: " + program_name)
@@ -25,7 +24,7 @@ class ProcessManager:
             def pre_exec():
                 os.setsid()
                 os.umask(411)
-               
+
             process = subprocess.Popen(
                 program_config['cmd'],
                 env=my_env,

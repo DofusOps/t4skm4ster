@@ -1,6 +1,6 @@
-import os
 import sys
 from src.color_print import ColorPrint
+
 
 class ControlShell:
     def __init__(self, process_manager, config_parser, logger):

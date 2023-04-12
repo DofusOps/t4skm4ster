@@ -6,10 +6,14 @@ on:
   pull_request:
     branches: [main, develop, ci]
 
+defaults:
+  run:
+    working-directory: taskmaster
+
 jobs:
   build:
 
-    runs-on: python-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:

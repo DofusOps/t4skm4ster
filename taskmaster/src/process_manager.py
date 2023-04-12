@@ -35,7 +35,7 @@ class ProcessManager:
                 preexec_fn=pre_exec,
             )
             self.processes[program_name] = process
-            ColorPrint.print_pass(f"Starting process: {program_name} (PID: {process.pid})")
+            ColorPrint.print_pass(f"Started process: {program_name} (PID: {process.pid})")
 
     def stop_process(self, program_name):
         ColorPrint.print_info("Stopping process: " + program_name)
@@ -69,6 +69,7 @@ class ProcessManager:
         ColorPrint.print_info("Restarting process: " + program_name)
         self.start_process(program_name)
         self.stop_process(program_name)
+        ColorPrint.print_pass(f"Restarted process: {program_name}")
 
     def monitor_processes(self):
         # Implement process monitoring and management logic here.

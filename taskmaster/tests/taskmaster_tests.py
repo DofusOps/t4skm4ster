@@ -1,13 +1,15 @@
 import pytest
 import pexpect
 
-def test_reload():
-    taskmaster = pexpect.spawn("python main.py")
-    taskmaster.sendline("reload")
-    taskmaster.expect("Config file loaded successfully")
-    taskmaster.sendline("exit")
+MAIN_PY_PATH = "../main.py"
 
-def test_reload2():
+@pytest.fixture(scope="module")
+def taskmaster():
+    taskmaster = pexpect.spawn(f"python {MAIN_PY_PATH}")
+    yield taskmaster
+    taskmaster.terminate(force=True)
+
+def test_reload(taskmaster):
     taskmaster = pexpect.spawn("python main.py")
     taskmaster.sendline("reload")
     taskmaster.expect("Config file loaded successfully")

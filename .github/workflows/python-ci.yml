@@ -40,6 +40,10 @@ jobs:
       run: |
         pytest tests/* --cov=taskmaster --cov-report=xml
 
+    - name: Print coverage.xml
+      run: |
+        cat coverage.xml
+
     - name: Scan with SonarCloud
       uses: SonarSource/sonarcloud-github-action@master
       env:

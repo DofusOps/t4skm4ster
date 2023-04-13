@@ -45,7 +45,7 @@ jobs:
 
     - name: Check dir
       run: |
-        ls
+        cat coverage.xml
 
     - name: Scan with SonarCloud
       uses: SonarSource/sonarcloud-github-action@master

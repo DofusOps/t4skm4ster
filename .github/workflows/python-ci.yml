@@ -43,6 +43,10 @@ jobs:
       run: |
         pytest tests/* --cov=. --cov-report=xml
 
+    - name: Check dir
+      run: |
+        ls
+
     - name: Scan with SonarCloud
       uses: SonarSource/sonarcloud-github-action@master
       env:

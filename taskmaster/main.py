@@ -2,9 +2,12 @@ from src.config_parser import ConfigParser
 from src.process_manager import ProcessManager
 from src.logger import Logger
 from src.control_shell import ControlShell
+import coverage
 
 
 def main():
+    coverage.process_startup()
+
     config_file = "configs/config.yaml"
     log_file = "logs/logfile.log"
 

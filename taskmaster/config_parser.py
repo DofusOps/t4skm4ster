@@ -1,5 +1,5 @@
 import yaml
-from src.color_print import ColorPrint
+from color_print import ColorPrint
 
 
 class ConfigParser:

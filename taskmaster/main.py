@@ -1,15 +1,17 @@
-from src.config_parser import ConfigParser
-from src.process_manager import ProcessManager
-from src.logger import Logger
-from src.control_shell import ControlShell
+import os
 import coverage
+from config_parser import ConfigParser
+from process_manager import ProcessManager
+from logger import Logger
+from control_shell import ControlShell
 
 
 def main():
     coverage.process_startup()
 
-    config_file = "configs/config.yaml"
-    log_file = "logs/logfile.log"
+    dirname = os.path.dirname(__file__)
+    config_file = os.path.join(dirname, "../configs/config.yaml")
+    log_file = os.path.join(dirname, "../logs/logfile.log")
 
     config_parser = ConfigParser(config_file)
     process_manager = ProcessManager(config_parser.config_data)

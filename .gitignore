@@ -1,6 +1,7 @@
 */**/__pycache__
 */**/.pytest_cache
 
-taskmaster/logs/logfile.log
-taskmaster/.coverage
-taskmaster/coverage.xml
+logs/logfile.log
+
+.coverage
+coverage.xml

@@ -4,4 +4,4 @@
 docker build -t dockmaster .
 
 # Run image
-docker run -it -v $PWD/taskmaster:/taskmaster dockmaster
+docker run -it -v $PWD:/taskmaster dockmaster

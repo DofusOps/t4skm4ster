@@ -1,4 +1,6 @@
-import os, logging, coverage
+import os
+import logging
+import coverage
 from config_parser import ConfigParser
 from process_manager import ProcessManager
 from control_shell import ControlShell

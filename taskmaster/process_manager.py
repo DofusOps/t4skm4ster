@@ -1,4 +1,6 @@
-import os, time, subprocess
+import os
+import time
+import subprocess
 from color_print import ColorPrint
 
 

@@ -10,6 +10,14 @@ def test_reload():
     taskmaster.expect(pexpect.EOF)
 
 
+def test_startstop():
+    taskmaster = pexpect.spawn("coverage run taskmaster/main.py", env=dict(os.environ, COVERAGE_PROCESS_START='.coveragerc'))
+    taskmaster.sendline("start proc1")
+    taskmaster.sendline("stop proc1")
+    taskmaster.expect("Stopping process: proc1")
+    taskmaster.sendline("exit")
+    taskmaster.expect(pexpect.EOF)
+
 def test_help():
     taskmaster = pexpect.spawn("coverage run taskmaster/main.py", env=dict(os.environ, COVERAGE_PROCESS_START='.coveragerc'))
     taskmaster.sendline("help")

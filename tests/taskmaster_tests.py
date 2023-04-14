@@ -18,6 +18,7 @@ def test_startstop():
     taskmaster.sendline("exit")
     taskmaster.expect(pexpect.EOF)
 
+
 def test_help():
     taskmaster = pexpect.spawn("coverage run taskmaster/main.py", env=dict(os.environ, COVERAGE_PROCESS_START='.coveragerc'))
     taskmaster.sendline("help")

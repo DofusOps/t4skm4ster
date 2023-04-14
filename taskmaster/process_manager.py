@@ -1,6 +1,4 @@
-import subprocess
-import time
-import os
+import os, time, subprocess
 from color_print import ColorPrint
 
 
@@ -19,10 +17,10 @@ class ProcessManager:
         numprocs = program_config.get('numprocs', 1)
         my_env = program_config.get('env', os.environ)
 
-        for i in range(numprocs):
-            def pre_exec():
-                os.setsid()
-                os.umask(411)
+        for _ in range(numprocs):
+            # def pre_exec():
+            #     os.setsid()
+            #     os.umask(411)
 
             process = subprocess.Popen(
                 program_config['cmd'],
@@ -32,7 +30,8 @@ class ProcessManager:
                 stdin=subprocess.PIPE,
                 shell=True,
                 universal_newlines=True,
-                preexec_fn=pre_exec,
+                # preexec_fn=pre_exec,
+                start_new_session=True,
             )
             self.processes[program_name] = process
             ColorPrint.print_pass(f"Starting process: {program_name} (PID: {process.pid})")

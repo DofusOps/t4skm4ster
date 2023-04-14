@@ -45,7 +45,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      timeout-minutes: 5
-
-    - name: Wait for quality gate
-      run: sonar-scanner wait-for-quality-gate

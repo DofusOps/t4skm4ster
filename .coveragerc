@@ -1,3 +1,7 @@
 [coverage:run]
 relative_files = True
 parallel = True
+
+[report]
+exclude_lines =
+    ^def\s.*\(.*\):$

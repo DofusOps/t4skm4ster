@@ -63,8 +63,8 @@ class ProcessManager:
     def restart_process(self, program_name):
         # Implement process restarting logic here.
         ColorPrint.print_info("Restarting process: " + program_name)
-        self.start_process(program_name)
         self.stop_process(program_name)
+        self.start_process(program_name)
 
     def monitor_processes(self):
         # Implement process monitoring and management logic here.

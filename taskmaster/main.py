@@ -5,8 +5,6 @@ from process_manager import ProcessManager
 from control_shell import ControlShell
 import coverage
 
-coverage.process_startup()
-
 
 def main():
     dirname = os.path.dirname(__file__)
@@ -28,4 +26,5 @@ def main():
 
 
 if __name__ == "__main__":
+    coverage.process_startup()
     main()

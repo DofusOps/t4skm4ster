@@ -33,6 +33,10 @@ class ControlShell:
         logging.info("Restarting program: " + program_name)
         self.process_manager.restart_process(program_name)
 
+    def monitor_processes(self):
+        # Implement logic to reload the config file
+        self.process_manager.monitor_processes()
+
     def reload_config(self):
         # Implement logic to reload the config file
         logging.info("Reloading config")

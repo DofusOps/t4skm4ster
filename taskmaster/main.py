@@ -1,14 +1,14 @@
 import os
 import logging
-import coverage
 from config_parser import ConfigParser
 from process_manager import ProcessManager
 from control_shell import ControlShell
+import coverage
+
+coverage.process_startup()
 
 
 def main():
-    coverage.process_startup()
-
     dirname = os.path.dirname(__file__)
     config_file = os.path.join(dirname, "../configs/config.yaml")
     logfile = os.path.join(dirname, "../logs/logfile.log")

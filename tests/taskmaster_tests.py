@@ -6,7 +6,7 @@ import os
 def pspawn():
     return pexpect.spawn(
         "coverage run taskmaster/main.py",
-        env=dict(os.environ, COVERAGE_PROCESS_START='.coveragerc')
+        # env=dict(os.environ, COVERAGE_PROCESS_START='.coveragerc')
     )
 
 

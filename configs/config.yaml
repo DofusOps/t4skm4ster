@@ -5,13 +5,21 @@ proc1:
   stoptime: 5
   # stdout: /tmp/nginx.stdout
   # stderr: /tmp/nginx.stderr
+  onstart: false
 proc2:
-  cmd: /bin/sh -c python programs/process2.py
+  cmd: python programs/process2.py
   stoptime: 2
   stopsignal: TERM
-  numprocs: 1
+  numprocs: 2
   # stderr: proc.stderr
   # stdout: proc.stdout
+  onstart: true
+quitter:
+  cmd: python programs/quitter.py
+  onstart: true
+  restart: onerror
+  expected:
+    - 0
 ls_proc:
   cmd: /bin/ls
 ls_no_bin:

@@ -13,29 +13,30 @@ class ControlShell:
         logging.info("Printing status")
         for program_name in self.config_parser.config_data:
             ColorPrint.print_pass(program_name + " is loaded.")
-            if program_name in self.process_manager.processes:
+            if program_name in self.process_manager.programs:
                 ColorPrint.print_pass(program_name + " is running.")
             else:
                 ColorPrint.print_fail(program_name + " is not running.")
+        self.process_manager.monitor_processes()
 
     def start_program(self, program_name):
         # Implement logic to start a program
         logging.info("Starting program: " + program_name)
-        self.process_manager.start_process(program_name)
+        self.process_manager.start_program(program_name)
 
     def stop_program(self, program_name):
         # Implement logic to stop a program
         logging.info("Stopping program: " + program_name)
-        self.process_manager.stop_process(program_name)
+        self.process_manager.stop_program(program_name)
 
     def restart_program(self, program_name):
         # Implement logic to restart a program
         logging.info("Restarting program: " + program_name)
-        self.process_manager.restart_process(program_name)
+        self.process_manager.restart_program(program_name)
 
-    def monitor_processes(self):
-        # Implement logic to reload the config file
-        self.process_manager.monitor_processes()
+    # def monitor_processes(self):
+    #     # Implement logic to reload the config file
+    #     self.process_manager.monitor_processes()
 
     def reload_config(self):
         # Implement logic to reload the config file
@@ -64,8 +65,8 @@ class ControlShell:
                 self.reload_config()
             elif cmd == 'help':
                 print("Available commands: status, start <program>, stop <program>, restart <program>, reload, exit")
-            elif cmd == 'monitor':
-                self.monitor_processes()
+            # elif cmd == 'monitor':
+            #     self.monitor_processes()
             elif cmd in ['exit', 'quit']:
                 self.exit_program()
             else:
